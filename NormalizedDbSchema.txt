@@ -1,0 +1,28 @@
+To normalize the given tables and better represent the data, we can create separate tables for Employees, Managers, and Supervisors, and then create a common table for personal information. Additionally, we can create a table for business expenses for managers. Here's how we can do it:
+
+Employees Table:
+	EmployeeID (Primary Key)
+	FirstName
+	LastName
+	Address1
+
+Managers Table:
+	ManagerID (Primary Key)
+	EmployeeID (Foreign Key referencing Employees.EmployeeID)
+	AnnualSalary
+
+Supervisors Table:
+	SupervisorID (Primary Key)
+	EmployeeID (Foreign Key referencing Employees.EmployeeID)
+	AnnualSalary
+
+EmployeeDetails Table:
+	EmployeeID (Primary Key)
+	PayPerHour (Only for Employees)
+
+BusinessExpenses Table:
+	ExpenseID (Primary Key)
+	ManagerID (Foreign Key referencing Managers.ManagerID)
+	MaxExpenseAmount
+	
+This schema allows for better organization of data, reduces redundancy, and ensures data integrity through the use of foreign key constraints.
